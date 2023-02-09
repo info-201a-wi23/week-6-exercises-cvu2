@@ -1,11 +1,12 @@
 # Analyzing Family Wealth & Home Ownership Over Time in the U.S.
 
-home_owner <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/home_owner.csv')
+home_owner <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/home_owner.csv', stringsAsFactors = FALSE)
 
-race_wealth <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/race_wealth.csv')
+race_wealth <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/race_wealth.csv', stringsAsFactors = FALSE)
 
 # Load relevant libraries
-Your code here
+library("dyplr")
+library("ggplot2")
 
 # How is average family wealth in the U.S. trending over time?
 
@@ -13,8 +14,9 @@ Your code here
 # Then we need to make a new dataframe from race_wealth with the average family wealth per year for all races
 # Save this as `total_avg_wealth`
 
-Your code here
-
+total_avg_wealth <- race_wealth %>%
+  filter(type == Average) %>% 
+  
 # Now let's make a scatter plot of total average family wealth over time
 
 Your code here
